@@ -80,14 +80,14 @@
           <!-- seções de páginas -->
           <?php
 
-            $sqlSecaoPaginas = "SELECT idSecaoPaginas, titulo FROM secaopaginas WHERE exibir = 1";
+            /*$sqlSecaoPaginas = "SELECT id, titulo FROM secao_pagina WHERE exibir = 1";
 
             $resultSecaoPaginas = $con->query($sqlSecaoPaginas);
 
             if ($resultSecaoPaginas->num_rows > 0) { // Exibindo cada linha retornada com a consulta
               while ($exibirSecaoPaginas = $resultSecaoPaginas->fetch_assoc()){
-                $idSecaoPaginas = $exibirSecaoPaginas["idSecaoPaginas"];
-                $nomeSecaoPaginas = $exibirSecaoPaginas["titulo"];
+                $idSecaoPaginas = $exibirSecaoPaginas["id"];
+                $nomeSecaoPaginas = $exibirSecaoPaginas["titulo"];*/
           ?>
 
                 <li class="nav-item dropdown">
