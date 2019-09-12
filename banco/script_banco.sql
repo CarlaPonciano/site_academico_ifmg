@@ -126,5 +126,83 @@ CREATE TABLE corpo_docente_pendente(
     FOREIGN KEY (id_autor) REFERENCES usuario(id)
 );
 
+create table secao(
+	idSecao int auto_increment not null,
+    nome varchar(100) not null,
+    conteudo longtext,
+    Usuario_autor int(11),
+    dataAlteracao datetime,
+    Usuario_autorAprovacao int(11),
+    dataAprovacao datetime,
+    exibir tinyint(1) not null,
+    primary key (idSecao),
+    FOREIGN KEY (Usuario_autor) REFERENCES usuario(id),
+    FOREIGN KEY (Usuario_autorAprovacao) REFERENCES usuario(id)
+);
+create table secaoPendente(
+	idSecaoPendente int auto_increment not null,
+    nome varchar(100) not null,
+    conteudo longtext,
+    autor int(11),
+    dataAlteracao datetime,
+    aprovacao tinyint(1),
+    primary key (idSecaoPendente),
+    FOREIGN KEY (autor) REFERENCES usuario(id)
+);
+create table secaoPosts(
+	id int auto_increment not null,
+    titulo varchar(100) not null,
+    exibir tinyint(1) not null,
+    primary key (id)
+);
+create table post(
+	idPost int auto_increment not null,
+    SecaoPosts_id int not null,
+    titulo varchar(100) not null,
+    conteudo longtext not null,
+    img varchar(45) not null,
+    autorAprovacao int(11),
+    dataAprovacao datetime,
+    autorAlteracao int (11),
+    dataAlteracao datetime,
+    cadastro tinyint(1) not null,
+    dataPostagem datetime,
+    primary key(idPost, SecaoPosts_id),
+    foreign key(SecaoPosts_id) references secaoPosts(id),
+    FOREIGN KEY (autorAprovacao) REFERENCES usuario(id),
+    FOREIGN KEY (autorAlteracao) REFERENCES usuario(id)
+);
+create table postPendente(
+	idPostPendente int not null auto_increment,
+    SecaoPosts_id int not null,
+    titulo varchar(100) not null,
+    conteudo longtext not null,
+    img varchar(45) not null,
+    autorAlteracao int (11),
+    dataAlteracao datetime,
+    aprovacao tinyint(1),
+    cadastro tinyint(1),
+    primary key(idPostPendente, SecaoPosts_id),
+    foreign key(SecaoPosts_id) references secaoPosts(id),
+    FOREIGN KEY (autorAlteracao) REFERENCES usuario(id)
+);
+create table imagem(
+	idImagem int auto_increment not null,
+    imagem varchar(45) not null,
+    titulo varchar(100),
+    legenda varchar(200),
+    dia datetime not null,
+    header tinyint(1) not null,
+    link varchar(300),
+    primary key(idImagem)
+);
+create table redeSocial(
+	idRedeSocial int not null auto_increment,
+    nome varchar(100) not null,
+    link varchar(300) not null,
+    mostrar tinyint(1) not null,
+    primary key (idRedeSocial)
+);
+
 /*INSERÇÃO DOS TIPOS DE PERFIL*/
 INSERT INTO tipo_perfil(tipo) VALUES ("Professor"), ("Administrador");
