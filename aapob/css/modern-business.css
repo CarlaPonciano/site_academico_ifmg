@@ -36,12 +36,12 @@ body {
 }
 
 h1,h2,h3{
-  color:#285da0;
+  color:#2a9d38;
   font-weight: bold;
 }
 
 .navbar{
-  background-color: #285da0;
+  background-color: #2a9d38;
 }
 
 .footerAaa{
@@ -53,7 +53,7 @@ h1,h2,h3{
 }
 
 .footerAaa hr{
-  border-color: #285da0;
+  border-color: #2a9d38;
 }
 
 .item:after {

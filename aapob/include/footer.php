@@ -1,7 +1,7 @@
 <!-- Footer -->
     <footer class="page-footer font-small footerAaa" style="background-color: #1C2331;">
 
-        <div style="background-color: #285da0;">
+        <div style="background-color: #2a9d38;">
           <div class="container">
 
             <!-- Grid row-->
@@ -129,7 +129,7 @@
         </div>
         <!-- Footer Links -->
 
-        <div style="background-color: #285da0;">
+        <div style="background-color: #2a9d38;">
 
           <div class="container">
             <!-- Call to action -->
