@@ -12,14 +12,14 @@
   <title>Associação dos Aposentados e Pensionistas de Ouro Branco</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor-admin-website/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor-admin-website/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../css/sb-admin.css" rel="stylesheet">
 
-  <script src="vendor/components/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="../vendor/components/jquery/jquery.min.js" type="text/javascript"></script>
 
-  <script src="vendor/twitter/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../vendor/twitter/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
   <script type="text/javascript">
       function id(el) {
@@ -77,11 +77,11 @@
   </script>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 
