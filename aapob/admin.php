@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<?php
-  session_start();
-?>
-=======
 
 <?php
   session_start();
 ?>
 
->>>>>>> 44fe9394fcfca5ba6645bbdcc604dfa14932e993
   <head>
 
     <meta charset="utf-8">
@@ -43,53 +37,9 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Institucional</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="#">Sobre o Curso</a>
-              <a class="dropdown-item" href="#">Horário de Aulas</a>
-              <a class="dropdown-item" href="#">Matriz Curricular</a>
-              <a class="dropdown-item" href="#">Ementa</a>
-            </div>
-          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink">Corpo Docente</a>
+            <a class="nav-link" href="#" id="navLink">Cadastrar Professor</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="navLink">Projetos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="navLink">Galeria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="navLink">Eventos</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink">Notícias</a>
-          </li>
-<<<<<<< HEAD
-
-          <?php
-            if($_SESSION['tipo'] == 2){ 
-          ?>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink"> Área Administrativa</a>
-          </li>
-          <?php
-            }
-          ?>
-
-=======
-          <?php
-              if($_SESSION['tipo'] == 2){
-          ?>
-            <li class="nav-item">
-              <a class="nav-link" href="admin.php" id="navLink">Área Administrativa</a>
-            </li>
-          <?php   
-            }
-          ?>
->>>>>>> 44fe9394fcfca5ba6645bbdcc604dfa14932e993
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
@@ -109,7 +59,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h3 class="my-4">Bem-vindo(a) ao Curso Bacharelado de Sistemas de Informação!</h3>
+      <h3 class="my-4">Área Administrativa</h3>
 
       <!-- Marketing Icons Section -->
       <div class="row">
@@ -430,153 +380,6 @@
 
     <!-- Footer -->
     <footer class="page-footer font-small footerAaa" style="background-color: #16561e;">
-
-        <div style="background-color: #2a9d38;">
-          <div class="container">
-
-            <!-- Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                <h6 class="mb-0">Acesse também as nossas redes sociais!</h6>
-              </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
-              <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-                <!-- Facebook -->
-                <a class="fb-ic">
-                  <i class="fa fa-facebook white-text mr-4"> </i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic">
-                  <i class="fa fa-twitter white-text mr-4"> </i>
-                </a>
-                <!-- Google +-->
-                <a class="gplus-ic">
-                  <i class="fa fa-google-plus white-text mr-4"> </i>
-                </a>
-                <!--Linkedin -->
-                <a class="li-ic">
-                  <i class="fa fa-linkedin white-text mr-4"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic">
-                  <i class="fa fa-instagram white-text"> </i>
-                </a>
-
-              </div>
-              <!-- Grid column -->
-
-            </div>
-            <!-- Grid row-->
-
-          </div>
-        </div>
-
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
-
-          <!-- Grid row -->
-          <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-              <!-- Content -->
-              <h6 class="text-uppercase font-weight-bold">Sobre</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>O Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais (IFMG) é uma
-                 instituição que oferece educação básica, profissional e superior.</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Links</h6>
-              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a href="#!">Link 1</a>
-              </p>
-              <p>
-                <a href="#!">Link 2</a>
-              </p>
-              <p>
-                <a href="#!">Link 3</a>
-              </p>
-              <p>
-                <a href="#!">Link 4</a>
-              </p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Links</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a href="#!">Link 1</a>
-              </p>
-              <p>
-                <a href="#!">Link 2</a>
-              </p>
-              <p>
-                <a href="#!">Link 3</a>
-              </p>
-              <p>
-                <a href="#!">Link 4</a>
-              </p>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold">Contato</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <i class="fa fa-home mr-3"></i> R. Afonso Sardinha, 90 - Pioneiros, Ouro Branco - MG, 36420-000</p>
-              <p>
-                <i class="fa fa-envelope mr-3"></i>gabinete.ourobranco@ifmg.edu.br</p>
-              <p>
-                <i class="fa fa-phone mr-3"></i> (31) 3938-1200</p>
-
-            </div>
-            <!-- Grid column -->
-
-          </div>
-          <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
-        <div style="background-color: #2a9d38;">
-          
-          <div class="container">
-            <!-- Call to action -->
-            <ul class="list-unstyled list-inline text-center py-4">
-              <!--<li class="list-inline-item">
-                <h6 class="mb-1">Login para Professores</h6>
-              </li>
-              <li class="list-inline-item">
-                <a href="login/index.html" class="btn btn-secondary btn-rounded">Login</a>
-              </li>-->
-            </ul>
-            <!-- Call to action -->
-          </div>
-
-        </div>
-
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
           <a href="#"> Bacharelado em Sistemas de Informação</a>
