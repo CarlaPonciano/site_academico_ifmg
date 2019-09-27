@@ -8,11 +8,9 @@
     //$senhaCrip = base64_encode($senha);
 
     $sql = "SELECT * FROM usuario WHERE email = '" . $email . "' AND senha = '" . $senha. "';";
-    echo $sql;
     $resultado = $conn->query($sql);
     if ($resultado->num_rows > 0) { //SE O USUÁRIO E SENHA FOREM VÁLIDOS
         $exibir = $resultado->fetch_assoc();
-        //$exibir = $resultado->fetch_assoc();
         $_SESSION['nome'] = $exibir["nome"];
         $_SESSION['email'] = $exibir["email"];
         $_SESSION['id'] = $exibir["id"];
