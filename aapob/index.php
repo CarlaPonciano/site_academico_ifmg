@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<?php
-  session_start();
-?>
-=======
 
 <?php
   session_start();
 ?>
 
->>>>>>> 44fe9394fcfca5ba6645bbdcc604dfa14932e993
   <head>
 
     <meta charset="utf-8">
@@ -67,19 +61,6 @@
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navLink">Notícias</a>
           </li>
-<<<<<<< HEAD
-
-          <?php
-            if($_SESSION['tipo'] == 2){ 
-          ?>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink"> Área Administrativa</a>
-          </li>
-          <?php
-            }
-          ?>
-
-=======
           <?php
               if($_SESSION['tipo'] == 2){
           ?>
@@ -89,7 +70,6 @@
           <?php   
             }
           ?>
->>>>>>> 44fe9394fcfca5ba6645bbdcc604dfa14932e993
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
