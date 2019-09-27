@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+  session_start();
+?>
   <head>
 
     <meta charset="utf-8">
@@ -57,6 +59,17 @@
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navLink">Notícias</a>
           </li>
+
+          <?php
+            if($_SESSION['tipo'] == 2){ 
+          ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" id="navLink"> Área Administrativa</a>
+          </li>
+          <?php
+            }
+          ?>
+
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
