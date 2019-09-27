@@ -16,11 +16,10 @@
         $_SESSION['email'] = $exibir["email"];
         $_SESSION['id'] = $exibir["id"];
         $_SESSION['tipo'] = $exibir["tipo"];
-        echo "<script language='javascript' type='text/javascript'>window.location.href=index.php;</script>";
-        echo $_SESSION['nome'];
-        
+        echo "<script>alert('Login realizado com sucesso!.');</script>";
+        echo "<script>window.location.href='index.php';</script>";
     }else{
         echo "<script>alert('Erro no login. Tente novamente.');</script>";
-        //echo "<script>window.location = 'javascript:window.history.go(-1)';</script>";
+        echo "<script>window.location = 'javascript:window.history.go(-1)';</script>";
     }
 ?>
