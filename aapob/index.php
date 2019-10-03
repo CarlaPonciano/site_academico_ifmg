@@ -67,16 +67,27 @@
             <li class="nav-item">
               <a class="nav-link" href="admin.php" id="navLink">Área Administrativa</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+            </li>
           <?php   
+            }else{
+              if($_SESSION['tipo'] == 1){
+          ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+                </li>
+          <?php   
+              }
             }
           ?>
         </ul>
-        <form class="form-inline my-2 my-md-0">
+        <!--<form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
           <button class="btn btn-outline-default my-2 my-sm-0" type="submit" class="btn btn-info">
             <i class="fas fa-search"></i>
           </button>
-        </form>
+        </form>-->
       </div>
     </nav>
 
@@ -545,12 +556,9 @@
           <div class="container">
             <!-- Call to action -->
             <ul class="list-unstyled list-inline text-center py-4">
-              <!--<li class="list-inline-item">
-                <h6 class="mb-1">Login para Professores</h6>
-              </li>
               <li class="list-inline-item">
-                <a href="login/index.html" class="btn btn-secondary btn-rounded">Login</a>
-              </li>-->
+                <a href="index.html" class="btn btn-primary btn-rounded">Sair</a>
+              </li>
             </ul>
             <!-- Call to action -->
           </div>

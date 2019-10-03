@@ -1,212 +1,105 @@
-<?php
-include("include/headerAdm.php");
-require __DIR__ . '/vendor/autoload.php';
-if (isset($_SESSION['login'])){
-?>
-
-<style>
-  a{
-    color: #212529;
-  }
-</style>
-
-<!-- Breadcrumbs-->
-<ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="indexAdmin.php" style="color: #0056C0;">Página Inicial</a>
-  </li>
-  <li class="breadcrumb-item active">Cadastrar</li>
-  <li class="breadcrumb-item active">Dependente</li>
-</ol>
-
-<form name="form1" class="form-horizontal" enctype="multipart/form-data" role="form" data-toggle="validator" action="inserirDependente.php" method="post">
-
-    <div class="card mb-3">
-      <a href="#dados" style="text-decoration: none" class="d-block card-header" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="dados">
-        <i class="fas fa-user"></i>
-        Dados Pessoais
-      </a>
-
-      <div id="dados">
-        <div class="card-body">
-
-          <div class="form-row">
-
-            <div class="form-group col-md-12">
-              <label for="myInput">
-                Procure pelo nome do sócio <span title="obrigatório">*</span>
-              </label>
-              <input type="text" maxlength="240" class="form-control" id="myInput" placeholder="Procure pelo nome do sócio" name="myInput" required>
-            </div>
-
-            <div class="col-12 col-sm-12 col-md-12  col-lg-12 col-xl-12">  
-                <div class="col-12 col-sm-6 col-md-5 col-lg-5 col-xl-5" style="position: absolute;
-                     z-index: 3;
-                     background-color: #fff;
-                     margin-left: 15px;
-                     padding-top: 15px;">  
-                    <div id="resultado" name="resultado">
-
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <br>
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="nomeAss">
-                Sócio <span title="obrigatório">*</span>
-              </label>
-              <input readonly="readonly" type="text" maxlength="240" class="form-control" id="nomeAss" placeholder="Nome Completo" name="nomeAss" required>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="matricula">
-                Matrícula <span title="obrigatório">*</span>
-              </label>
-              <input readonly="readonly" type="text" maxlength="240" class="form-control" id="matricula" placeholder="Matrícula" name="matricula" required>
-            </div>
-
-          </div>
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="nome">
-                Nome <span title="obrigatório">*</span>
-              </label>
-              <input type="text" class="form-control" id="nome" placeholder="Nome completo" name="nome" required>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="dataNascimento">Data de Nascimento</label>
-              <input type="date" class="form-control" id="dataNascimento" max="<?php echo date("Y-m-d"); ?>" min="1900-01-01" placeholder="dd/mm/aaaa" name="dataNascimento">
-            </div>
-
-          </div>
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="genero">Gênero</label>
-              <select id="genero" name="genero" class="form-control">
-                <?php
-                    $resGenero = $con->query("SELECT idGenero, genero 
-                                            FROM genero");
-
-                    while ($rowGenero = $resGenero->fetch_assoc()) {
-                        unset($id, $name);
-                        $id = $rowGenero['idGenero'];
-                        $name = ucwords(strtolower($rowGenero['genero']));
-                        echo '<option value="' . $id . '">' . $name . '</option>';
-                    }
-                ?>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="cpf">
-                CPF 
-                <span href="#" title="Somente Números" data-toggle="popover" data-placement="left" data-content="Content"><i class="fas fa-question-circle"></i></span>
-              </label>
-              <input minlength="5" maxlength="14" type="text" class="form-control" id="cpf" placeholder="00000000000" name="cpf">
-            </div>
-
-          </div>
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="parentesco">Grau de Parentesco</label>
-              <select id="parentesco" name="parentesco" class="form-control">
-                <?php
-                    $resParentesco = $con->query("SELECT idParentesco, parentesco 
-                                            FROM parentesco");
-
-                    while ($rowParentesco = $resParentesco->fetch_assoc()) {
-                        unset($id, $name);
-                        $id = $rowParentesco['idParentesco'];
-                        $name = ucwords(strtolower($rowParentesco['parentesco']));
-                        echo '<option value="' . $id . '">' . $name . '</option>';
-                    }
-                ?>
-              </select>
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="agregado">Tipo</label>
-              <select id="agregado" name="agregado" class="form-control">
-                <option value=0>Dependente</option>
-                <option value=1>Depentende-Agregado</option>
-              </select>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-
-      <a href="#contato" style="text-decoration: none" class="d-block card-header" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="contato">
-        <i class="fas fa-envelope"></i>
-        Dados de Contato
-      </a>
-
-      <div id="contato">
-        <div class="card-body">
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-
-              <label for="telefone">
-                Telefone
-                <span href="#" title="Somente Números" data-toggle="popover" data-placement="left" data-content="Content"><i class="fas fa-question-circle"></i></span>
-                <i class="fas fa-plus" title="Adicionar Novo Telefone" data-toggle="collapse" data-target="#collapseTelefone2" aria-expanded="false" aria-controls="collapseExample"></i>
-              </label>
-
-              <input type="text" class="form-control" id="telefone" maxlength="14" placeholder="Telefone" name="telefone">
-
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="email">
-                E-mail
-              </label>
-              <input type="email" class="form-control" id="email" placeholder="E-mail" name="email">
-            </div>
-
-          </div>
-
-          <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <div class="collapse" id="collapseTelefone2">
-                <input type="text" class="form-control" id="telefone2" maxlength="14" placeholder="Telefone" name="telefone2">
-              </div>
-            </div>
-
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <button type="submit" name="insertDependente" class="btn btn-primary">Cadastrar</button>
-
-</form>
-
-<script src="js\buscaSocio.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
 <?php
-include("include/footerAdm.php");
-
-}else{
-  echo "<script>window.location.href='index.php';</script>";
-}
+  session_start();
 ?>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sistemas de Informação</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        
+      <a class="navbar-brand" href="index.php"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample09">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="cadastrar_professor.php" id="navLink">Cadastrar Professor</a>
+          </li>
+        </ul>
+        <!--<form class="form-inline my-2 my-md-0">
+          <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
+          <button class="btn btn-outline-default my-2 my-sm-0" type="submit" class="btn btn-info">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>-->
+      </div>
+    </nav>
+
+    <hr>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h3 class="my-4">Cadastrar Professor</h3>
+
+      <form method="post" action="ca_professor.php" id="formcadastraprofessor" name="formcadastraprofessor">
+          <div class="form">
+            <div class="form-label">
+              <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="email" name="email" id="email" class="form-group" placeholder="email" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="password" name="senha" id="senha" class="form-group" placeholder="Senha" required="required">
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Cadastrar Professor</button>
+        </form>
+        <br>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small footerAaa" style="background-color: #16561e;">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="#"> Bacharelado em Sistemas de Informação</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+      <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

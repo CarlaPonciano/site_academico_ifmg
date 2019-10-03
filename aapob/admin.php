@@ -37,22 +37,24 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink">Cadastrar Professor</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" href="cadastrar_professor.php">Cadastrar</a>
+              <a class="dropdown-item" href="#">Editar</a>
+              <a class="dropdown-item" href="#">Excluir</a>
+              <a class="dropdown-item" href="#">Exibir</a>
+            </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-md-0">
+        <!--<form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
           <button class="btn btn-outline-default my-2 my-sm-0" type="submit" class="btn btn-info">
             <i class="fas fa-search"></i>
           </button>
-        </form>
+        </form>-->
       </div>
     </nav>
-
-    <header class="py-1 bg-image-full" style="background-image: url('logoSI.jpeg');">
-      <div style="height:20cm; width:10c"></div>
-    </header>
 
     <hr>
 
