@@ -63,7 +63,7 @@
 
       <h3 class="my-4">Cadastrar Professor</h3>
 
-      <form method="post" action="ca_professor.php" id="formcadastraprofessor" name="formcadastraprofessor">
+      <form method="post" action="cadastrar_professorPHP.php" id="formcadastraprofessor" name="formcadastraprofessor">
           <div class="form">
             <div class="form-label">
               <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" autofocus="autofocus" >

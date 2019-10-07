@@ -63,7 +63,7 @@
 
       <h3 class="my-4">Excluir Professor</h3>
 
-      <form method="post" action="exc_prof.php" id="formexcluiprofessor" name="formexcluiprofessor">
+      <form method="post" action="excluir_professorPHP.php" id="formexcluiprofessor" name="formexcluiprofessor">
           <div class="form">
             <div class="form-label">
               <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >

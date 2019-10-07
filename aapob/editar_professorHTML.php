@@ -66,7 +66,7 @@
       <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" 
       autofocus="autofocus" >
              
-      <form method="post" action="editar_professor.php" id="formeditaprofessor" name="formeditaprofessor">
+      <form method="post" action="editar_professorPHP.php" id="formeditaprofessor" name="formeditaprofessor">
       <p>Insira os novos dados: </p>
           <div class="form">
             <div class="form-label">

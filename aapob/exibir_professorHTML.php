@@ -61,17 +61,48 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h3 class="my-4">EXIBIR E NAO EXCLUIR Professor</h3>
+      <h3 class="my-4">Exibir Professor</h3>
 
-      <form method="post" action="exc_prof.php" id="formexcluiprofessor" name="formexcluiprofessor">
-          <div class="form">
-            <div class="form-label">
-              <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
-            </div>
-          </div>
-          <button class="btn btn-primary" type="submit">EXIBIR Professor</button>
-        </form>
-        <br>
+      <?php
+        include("conexao.php");
+    
+        $sql = "SELECT * FROM usuario WHERE tipo = 1";
+        $resultado = $conn->query($sql);
+        if ($resultado->num_rows > 0) { //SE O USUÁRIO E SENHA FOREM VÁLIDOS
+            ?>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            while ($exibir = $resultado->fetch_assoc()){
+        ?>
+        <tr>
+        <th scope="row"> <?php echo  $exibir["id"] ?></th>
+        <td><?php echo  $exibir["nome"] ?></td>
+        <td><?php echo  $exibir["cpf"] ?></td>
+        <td><?php echo  $exibir["tipo"] ?></td>
+        <td><?php echo  $exibir["email"] ?></td>
+        </tr>   
+
+        <?php
+            }
+          }else{
+            ?>
+            <p>Não há professores cadastrados</p>
+            <?php
+          }
+        ?>
+        
+        </tbody>
+      </table>
 
     </div>
     <!-- /.container -->
