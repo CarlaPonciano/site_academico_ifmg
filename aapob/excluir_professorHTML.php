@@ -69,7 +69,12 @@
               <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Excluir Professor</button>
+          <style>
+            button{
+              background: red;
+            }
+          </style>
+          <button class="btn btn-secundary" type="submit">Excluir</button>
         </form>
         <br>
 
