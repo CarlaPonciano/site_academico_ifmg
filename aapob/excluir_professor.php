@@ -60,11 +60,6 @@
       <form method="post" action="exc_prof.php" id="formexcluiprofessor" name="formexcluiprofessor">
           <div class="form">
             <div class="form-label">
-              <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" autofocus="autofocus" >
-            </div>
-          </div>
-          <div class="form">
-            <div class="form-label">
               <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
             </div>
           </div>

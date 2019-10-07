@@ -2,12 +2,10 @@
     include("conexao.php");
     session_start();
 
-    $nome = trim(strip_tags($_POST['nome'])); //trim remove espaços a mais e strip_tags remove tags html e outros códigos
     $cpf = trim(strip_tags($_POST['cpf']));
-    $email = trim(strip_tags($_POST['email']));
-    $senha = trim(strip_tags($_POST['senha']));
 
-    $sql = "DELETE FROM usuario WHERE (nome = '" . $nome . "' and cpf = '" . $cpf . "';)";
+    $sql = "DELETE FROM usuario WHERE cpf = '" . $cpf . "';";
+    echo $sql;
 
     if ($conn->query($sql) == true) { 
         echo "<script>alert('Professor excluído com sucesso!');</script>";
