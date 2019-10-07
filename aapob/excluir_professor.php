@@ -37,8 +37,14 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="excluir_professor.php" id="navLink">Excluir Professor</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" href="cadastrar_professor.php">Cadastrar</a>
+              <a class="dropdown-item" href="edit_prof.php">Editar</a>
+              <a class="dropdown-item" href="#">Exibir</a>
+              <a class="dropdown-item" href="excluir_professor.php">Excluir</a>
+            </div>
           </li>
         </ul>
         <!--<form class="form-inline my-2 my-md-0">
