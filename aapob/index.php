@@ -21,7 +21,7 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-
+    
   </head>
 
   <body>
@@ -111,7 +111,13 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="sobre.html" class="btn btn-primary">Saiba Mais</a>
+              <style>
+                button{
+                  background: red;
+                }
+              </style>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -122,7 +128,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam.</p>
             </div>
             <div class="card-footer">
-              <a href="horario.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -133,7 +140,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="matriz.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -144,7 +152,8 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
           </div>
           <div class="card-footer">
-            <a href="ementa.html" class="btn btn-primary">Saiba Mais</a>
+            <a href="sobre.html" class="btn btn-primary" >Editar</a>
+            <button name="button" class="btn btn-secundary">Excluir</button>
           </div>
         </div>
       </div>
@@ -155,7 +164,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="ementa.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -196,7 +206,7 @@
           <h2>Projetos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="projetos .html">Ver todos os Projetos</a>
+          <a class="float-right" href="projetos .html">Editar Projetos</a>
         </div>
       </div>
 
@@ -252,7 +262,7 @@
           <h2>Galeria</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas as Fotos</a>
+          <a class="float-right" href="eventos.html">Editar Galeria</a>
         </div>
       </div>
 
@@ -308,7 +318,7 @@
           <h2>Eventos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas os Eventos</a>
+          <a class="float-right" href="eventos.html">Editar Eventos</a>
         </div>
       </div>
 
@@ -365,7 +375,7 @@
           <h2>Notícias</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas as notícias</a>
+          <a class="float-right" href="eventos.html">Editar Notícias</a>
         </div>
       </div>
 
@@ -557,7 +567,12 @@
             <!-- Call to action -->
             <ul class="list-unstyled list-inline text-center py-4">
               <li class="list-inline-item">
-                <a href="index.html" class="btn btn-primary btn-rounded">Sair</a>
+                <style>
+                  button{
+                    background: red;
+                  }
+                </style>
+                <a href="index.html"><button name="button" class="btn btn-secundary">Sair</button></a>
               </li>
             </ul>
             <!-- Call to action -->
