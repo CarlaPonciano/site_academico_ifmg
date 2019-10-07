@@ -37,14 +37,8 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="cadastrar_professorHTML.php">Cadastrar</a>
-              <a class="dropdown-item" href="editar_professorHTML.php">Editar</a>
-              <a class="dropdown-item" href="exibir_professorHTML.php">Exibir</a>
-              <a class="dropdown-item" href="excluir_professorHTML.php">Excluir</a>
-            </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="excluir_professor.php" id="navLink">Excluir Professor</a>
           </li>
         </ul>
         <!--<form class="form-inline my-2 my-md-0">
@@ -61,7 +55,17 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h3 class="my-4">Área Administrativa</h3>
+      <h3 class="my-4">Excluir Professor</h3>
+
+      <form method="post" action="exc_prof.php" id="formexcluiprofessor" name="formexcluiprofessor">
+          <div class="form">
+            <div class="form-label">
+              <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Excluir Professor</button>
+        </form>
+        <br>
 
     </div>
     <!-- /.container -->
