@@ -206,7 +206,7 @@
           <h2>Projetos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="projetos .html">Editar Projetos</a>
+          <a class="float-right" href="projetos .html">Adicionar Projetos</a>
         </div>
       </div>
 
@@ -221,7 +221,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -235,7 +236,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -249,7 +251,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -262,7 +265,7 @@
           <h2>Galeria</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Editar Galeria</a>
+          <a class="float-right" href="eventos.html">Adicionar Fotos</a>
         </div>
       </div>
 
@@ -277,7 +280,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -291,7 +295,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -305,7 +310,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -318,7 +324,7 @@
           <h2>Eventos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Editar Eventos</a>
+          <a class="float-right" href="eventos.html">Adicionar Eventos</a>
         </div>
       </div>
 
@@ -333,7 +339,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -347,7 +354,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -361,7 +369,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -375,7 +384,7 @@
           <h2>Notícias</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Editar Notícias</a>
+          <a class="float-right" href="eventos.html">Adicionar Notícias</a>
         </div>
       </div>
 
@@ -390,7 +399,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -404,7 +414,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -418,7 +429,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary">Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
