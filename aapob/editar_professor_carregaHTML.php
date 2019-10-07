@@ -62,12 +62,39 @@
     <div class="container">
 
       <h3 class="my-4">Editar Professor</h3>
-
-      <form method="post" action="editar_professor_carregaHTML.php" id="formeditaprofessor" name="formeditaprofessor">
-        <p>Insira o CPF do professor que deseja alterar:</p>
-        <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" 
-        autofocus="autofocus" >
-      </form>
+             
+      <form method="post" action="editar_professorPHP.php" id="formeditaprofessor" name="formeditaprofessor">
+      <p>Insira os novos dados: </p>
+      <?php
+        include("conexao.php");
+        $cpf = trim(strip_tags($_POST['email']));
+    
+        $sql = "SELECT * FROM usuario WHERE cpf = '" . $cpf . "';
+        $resultado = $conn->query($sql);
+    ?>
+        if ($resultado->num_rows > 0) { //SE O USUÁRIO E SENHA FOREM VÁLIDOS
+          <div class="form">
+            <div class="form-label">
+              <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="email" name="email" id="email" class="form-group" placeholder="email" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+              <input type="password" name="senha" id="senha" class="form-group" placeholder="Senha" required="required">
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Alterar Dados</button>
+        </form>
         <br>
 
     </div>
