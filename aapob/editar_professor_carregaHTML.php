@@ -65,37 +65,46 @@
              
       <form method="post" action="editar_professorPHP.php" id="formeditaprofessor" name="formeditaprofessor">
       <p>Insira os novos dados: </p>
+
       <?php
         include("conexao.php");
-        $cpf = trim(strip_tags($_POST['email']));
-    
-        $sql = "SELECT * FROM usuario WHERE cpf = '" . $cpf . "';
+        $cpf = trim(strip_tags($_POST['cpf']));
+
+        $sql = "SELECT * FROM usuario WHERE cpf = '" . $cpf . "';";
         $resultado = $conn->query($sql);
-    ?>
-        if ($resultado->num_rows > 0) { //SE O USUÁRIO E SENHA FOREM VÁLIDOS
+        if ($resultado->num_rows > 0) {
+        $exibir = $resultado->fetch_assoc()
+      ?>
+
           <div class="form">
             <div class="form-label">
-              <input type="text" name="nome" id="nome" class="form-group" placeholder="Nome" required="required" autofocus="autofocus" >
+              <label for="nome">Nome: </label>
+              <input type="text" name="nome" id="nome" class="form-group" value="<?php echo $exibir["nome"]?>" required="required" autofocus="autofocus" >
             </div>
           </div>
           <div class="form">
             <div class="form-label">
-              <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" autofocus="autofocus" >
+            <label for="nome">Email: </label>
+              <input type="email" name="email" id="email" class="form-group" value="<?php echo $exibir["email"]?>" required="required" autofocus="autofocus" >
             </div>
           </div>
           <div class="form">
             <div class="form-label">
-              <input type="email" name="email" id="email" class="form-group" placeholder="email" required="required" autofocus="autofocus" >
+            <label for="nome">CPF: </label>
+              <input type="email" name="cpf" id="cpf" class="form-group" value="<?php echo $cpf?>" required="required" autofocus="autofocus" readonly>
             </div>
           </div>
-          <div class="form">
-            <div class="form-label">
-              <input type="password" name="senha" id="senha" class="form-group" placeholder="Senha" required="required">
-            </div>
-          </div>
+
           <button class="btn btn-primary" type="submit">Alterar Dados</button>
         </form>
         <br>
+
+      <?php
+        }else{
+          echo "Professor não cadastrado no sistema!"; ?> <br><br> <?php
+        }
+      ?>
+          
 
     </div>
     <!-- /.container -->

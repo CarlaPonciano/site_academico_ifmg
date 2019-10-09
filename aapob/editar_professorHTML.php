@@ -66,7 +66,8 @@
       <form method="post" action="editar_professor_carregaHTML.php" id="formeditaprofessor" name="formeditaprofessor">
         <p>Insira o CPF do professor que deseja alterar:</p>
         <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" 
-        autofocus="autofocus" >
+        autofocus="autofocus" > <br>
+        <button class="btn btn-primary" type="submit">Carregar Dados</button>
       </form>
         <br>
 

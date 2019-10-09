@@ -88,7 +88,7 @@
         <th scope="row"> <?php echo  $exibir["id"] ?></th>
         <td><?php echo  $exibir["nome"] ?></td>
         <td><?php echo  $exibir["cpf"] ?></td>
-        <td><?php echo  $exibir["tipo"] ?></td>
+        <td><?php if($exibir["tipo"] == 1) echo "Professor" ?></td>
         <td><?php echo  $exibir["email"] ?></td>
         </tr>   
 
