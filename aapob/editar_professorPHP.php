@@ -7,7 +7,6 @@
     $cpf = trim(strip_tags($_POST['cpf']));
 
     $sql = "UPDATE usuario SET nome = '" . $nome . "', cpf = " . $cpf . ", email = '" . $email . "' WHERE cpf = $cpf";
-    echo $sql;
     if ($conn->query($sql) == true) { 
         echo "<script>alert('Professor atualizado com sucesso!');</script>";
         echo "<script>window.location.href='admin.php';</script>";
