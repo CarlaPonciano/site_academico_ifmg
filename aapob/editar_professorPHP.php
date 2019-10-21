@@ -1,6 +1,5 @@
-<?php
-    include("conexao.php");
-    session_start();
+<?php 
+    include ("include/headerAdm.php"); 
 
     $nome = trim(strip_tags($_POST['nome']));
     $email = trim(strip_tags($_POST['email']));

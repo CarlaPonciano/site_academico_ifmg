@@ -1,6 +1,5 @@
 <?php
-    include("conexao.php");
-    session_start();
+    include ("include/headerAdm.php"); 
 
     $nome = trim(strip_tags($_POST['nome'])); //trim remove espaços a mais e strip_tags remove tags html e outros códigos
     $cpf = trim(strip_tags($_POST['cpf']));

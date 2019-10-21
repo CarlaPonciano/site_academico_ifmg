@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-  session_start();
+<?php 
+  include ("include/headerAdm.php"); 
 ?>
 
   <head>
@@ -584,7 +584,7 @@
                     background: red;
                   }
                 </style>
-                <a href="index.html"><button name="button" class="btn btn-secundary">Sair</button></a>
+                <a href="logout.php"><button name="button" class="btn btn-secundary">Sair</button></a>
               </li>
             </ul>
             <!-- Call to action -->

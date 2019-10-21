@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-  session_start();
+<?php 
+  include ("include/headerAdm.php"); 
 ?>
 
   <head>

@@ -1,6 +1,5 @@
 <?php
-    include("conexao.php");
-    session_start();
+    include ("include/headerAdm.php"); 
 
     $cpf = trim(strip_tags($_POST['cpf']));
 
