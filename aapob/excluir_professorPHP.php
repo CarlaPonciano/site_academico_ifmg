@@ -1,7 +1,7 @@
 <?php
     include ("include/headerAdm.php"); 
 
-    $cpf = trim(strip_tags($_POST['cpf']));
+    $cpf = trim(strip_tags($_GET["cpf"]));
 
     $sql = "SELECT * FROM usuario WHERE cpf = '" . $cpf . "';";
     $resultado = $conn->query($sql);
@@ -10,7 +10,7 @@
 
         if ($conn->query($sql2) == true) { 
             echo "<script>alert('Professor excluído com sucesso!');</script>";
-            echo "<script>window.location.href='admin.php';</script>";
+            echo "<script>window.location.href='exibir_professorHTML.php';</script>";
         }else{
             echo "<script>alert('Erro ao excluir professor!');</script>";
             echo "<script>window.location = 'javascript:window.history.go(-1)';</script>";

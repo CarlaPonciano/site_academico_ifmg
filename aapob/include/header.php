@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php 
+  include ("./conexao.php"); 
+?>
+
   <head>
 
     <meta charset="utf-8">
@@ -8,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Associação dos Aposentados e Pensionistas de Ouro Branco</title>
+    <title>Sistemas de Informação</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +21,6 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-
   </head>
 
   <body>
@@ -25,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         
-      <a class="navbar-brand" href="index.html"><img class="img-fluid rounded" src="logo-aaa-branco-2.png" alt="" style="height: 30px;"></a>
+      <a class="navbar-brand" href="index.html"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,22 +36,83 @@
 
       <div class="collapse navbar-collapse" id="navbarsExample09">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Institucional</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="historia.php">História</a>
-              <a class="dropdown-item" href="estatuto.php">Estatuto</a>
-              <a class="dropdown-item" href="diretoria.php">Diretoria</a>
-            </div>
-          </li>
+          <!-- seções de páginas -->
+          <?php
+            $sqlSecaoPaginas = "SELECT id, titulo FROM secao_pagina WHERE exibir = 1";
+
+            $resultSecaoPaginas = $conn->query($sqlSecaoPaginas);
+
+            if ($resultSecaoPaginas->num_rows > 0) { // Exibindo cada linha retornada com a consulta
+              while ($exibirSecaoPaginas = $resultSecaoPaginas->fetch_assoc()){
+                $idSecaoPaginas = $exibirSecaoPaginas["id"];
+                $nomeSecaoPaginas = $exibirSecaoPaginas["titulo"];
+          ?>
+                <li class="nav-item dropdown">
+                  <a style="font-size: 14px;" class="link-barra-nav nav-link dropdown-toggle" href="" id="navLink" 
+                    id="dropdownSecao<?php echo $idSecaoPaginas; ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $nomeSecaoPaginas; ?>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownSecao<?php echo $idSecaoPaginas; ?>">
+
+                    <?php
+
+                      $sqlPagina = "SELECT id, nome FROM pagina WHERE exibir = 1 AND id_secao_pag = " . $idSecaoPaginas;
+
+                      $resultPagina = $conn->query($sqlPagina);
+
+                      if ($resultPagina->num_rows > 0) { // Exibindo cada linha retornada com a consulta
+                        while ($exibirPagina = $resultPagina->fetch_assoc()){
+                          $idPagina = $exibirPagina["id"];
+                          $nomePagina = ucwords($exibirPagina["nome"]);
+                    ?>
+
+                          <a style="font-size: 14px;" class="dropdown-item" href="pagina.php?id=<?php echo $idPagina; ?>"><?php echo $nomePagina; ?>
+
+                          <?php
+
+                            if (isset($_SESSION["login"])) { //SE EXISTIR AUTENTICAÇÃO
+                              if (isAdmin($_SESSION['tipo'])){ //SE O USUÁRIO LOGADO FOR DO TIPO ADMINISTRADOR
+
+                                $sqlPaginaAprov = "SELECT aprovacao FROM pagina_pendente WHERE aprovacao = 0 AND id_secao_pag = " . $idPagina;
+
+                                $resultPaginaAprov = $conn->query($sqlPaginaAprov);
+
+                                if ($resultPaginaAprov->num_rows > 0) { // Exibindo cada linha retornada com a consulta
+                          ?>
+                                  <span class="badge badge-danger">1</span>
+                          <?php
+                                }
+                              }
+                            }
+                          ?>
+                          
+                          </a>
+
+                    <?php
+                        } // fim while Pagina
+                      } // fim if Pagina
+                    ?>
+
+                  </div>
+
+                </li>
+          <?php
+              } // fim while SecaoPaginas
+            } // fim if SecaoPaginas
+          ?>
+
+          <!-- fim seções de páginas -->
           <li class="nav-item active">
-            <a class="nav-link" href="beneficios.php" id="navLink">Benefícios</a>
+            <a class="nav-link" href="#" id="navLink">Corpo Docente</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="associar.php" id="navLink">Associe-se</a>
+            <a class="nav-link" href="#" id="navLink">Projetos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="eventos.php" id="navLink">Eventos</a>
+            <a class="nav-link" href="#" id="navLink">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" id="navLink">Eventos</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navLink">Notícias</a>
@@ -63,8 +127,8 @@
       </div>
     </nav>
 
-    <header class="py-5 bg-image-full" style="background-image: url('bg-aaa.png');">
-      <div style="height: 350px;"></div>
+    <header class="py-1 bg-image-full" style="background-image: url('logoSI.jpeg');">
+      <div style="height:20cm; width:10c"></div>
     </header>
 
     <hr>

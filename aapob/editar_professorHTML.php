@@ -41,9 +41,7 @@
             <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
               <a class="dropdown-item" href="cadastrar_professorHTML.php">Cadastrar</a>
-              <a class="dropdown-item" href="editar_professorHTML.php">Editar</a>
               <a class="dropdown-item" href="exibir_professorHTML.php">Exibir</a>
-              <a class="dropdown-item" href="excluir_professorHTML.php">Excluir</a>
             </div>
           </li>
         </ul>
@@ -62,14 +60,49 @@
     <div class="container">
 
       <h3 class="my-4">Editar Professor</h3>
+             
+      <form method="post" action="editar_professorPHP.php" id="formeditaprofessor" name="formeditaprofessor">
+      <p>Insira os novos dados: </p>
 
-      <form method="post" action="editar_professor_carregaHTML.php" id="formeditaprofessor" name="formeditaprofessor">
-        <p>Insira o CPF do professor que deseja alterar:</p>
-        <input type="text" name="cpf" id="cpf" class="form-group" placeholder="CPF" required="required" 
-        autofocus="autofocus" > <br>
-        <button class="btn btn-primary" type="submit">Carregar Dados</button>
-      </form>
+      <?php
+        include("conexao.php"); 
+        $cpf = trim(strip_tags($_GET["cpf"]));
+
+        $sql = "SELECT * FROM usuario WHERE cpf = '" . $cpf . "';";
+        $resultado = $conn->query($sql);
+        if ($resultado->num_rows > 0) {
+        $exibir = $resultado->fetch_assoc()
+      ?>
+
+          <div class="form">
+            <div class="form-label">
+              <label for="nome">Nome: </label>
+              <input type="text" name="nome" id="nome" class="form-group" value="<?php echo $exibir["nome"]?>" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+            <label for="nome">Email: </label>
+              <input type="email" name="email" id="email" class="form-group" value="<?php echo $exibir["email"]?>" required="required" autofocus="autofocus" >
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-label">
+            <label for="nome">CPF: </label>
+              <input type="email" name="cpf" id="cpf" class="form-group" value="<?php echo $cpf?>" required="required" autofocus="autofocus" readonly>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Alterar Dados</button>
+        </form>
         <br>
+
+      <?php
+        }else{
+          echo "Professor não cadastrado no sistema!"; ?> <br><br> <?php
+        }
+      ?>
+          
 
     </div>
     <!-- /.container -->

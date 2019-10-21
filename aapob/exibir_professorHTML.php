@@ -41,9 +41,7 @@
             <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
               <a class="dropdown-item" href="cadastrar_professorHTML.php">Cadastrar</a>
-              <a class="dropdown-item" href="editar_professorHTML.php">Editar</a>
               <a class="dropdown-item" href="exibir_professorHTML.php">Exibir</a>
-              <a class="dropdown-item" href="excluir_professorHTML.php">Excluir</a>
             </div>
           </li>
         </ul>
@@ -78,6 +76,7 @@
                 <th scope="col">CPF</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Email</th>
+                <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,13 +89,15 @@
         <td><?php echo  $exibir["cpf"] ?></td>
         <td><?php if($exibir["tipo"] == 1) echo "Professor" ?></td>
         <td><?php echo  $exibir["email"] ?></td>
+        <td><a href="editar_professorHTML.php?cpf=<?php echo $exibir["cpf"]?>"> <i class="far fa-edit"></i></a>
+            <a href="excluir_professorPHP.php?cpf=<?php echo $exibir["cpf"]?> "> <i class="fas fa-trash" style="color:red"></i></a>  </td>
         </tr>   
 
         <?php
             }
           }else{
             ?>
-            <p>Não há professores cadastrados</p>
+            <p>Não há professores cadastrados!</p>
             <?php
           }
         ?>

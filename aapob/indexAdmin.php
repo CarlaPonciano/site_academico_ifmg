@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php 
+  include ("include/headerAdm.php"); 
+?>
+
   <head>
 
     <meta charset="utf-8">
@@ -17,6 +21,7 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    
   </head>
 
   <body>
@@ -24,7 +29,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         
-      <a class="navbar-brand" href="index.html"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
+      <a class="navbar-brand" href="index.php"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,13 +61,33 @@
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navLink">Notícias</a>
           </li>
+          <?php
+              if($_SESSION['tipo'] == 2){
+          ?>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.php" id="navLink">Área Administrativa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+            </li>
+          <?php   
+            }else{
+              if($_SESSION['tipo'] == 1){
+          ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+                </li>
+          <?php   
+              }
+            }
+          ?>
         </ul>
-        <form class="form-inline my-2 my-md-0">
+        <!--<form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">
           <button class="btn btn-outline-default my-2 my-sm-0" type="submit" class="btn btn-info">
             <i class="fas fa-search"></i>
           </button>
-        </form>
+        </form>-->
       </div>
     </nav>
 
@@ -83,11 +108,16 @@
           <div class="card h-100">
             <h4 class="card-header">Sobre o Curso</h4>
             <div class="card-body">
-              <p class="card-text">Uma das principais áreas em que este profissional atua é no desenvolvimento de software.
-                 Ele projeta e desenvolve sistemas a partir das necessidades dos usuários.</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="sobre.html" class="btn btn-primary">Saiba Mais</a>
+              <style>
+                button{
+                  background: red;
+                }
+              </style>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -95,12 +125,11 @@
           <div class="card h-100">
             <h4 class="card-header">Horário de Aulas</h4>
             <div class="card-body">
-              <p class="card-text">As aulas estão situadas no período da noite,uma vez que, o curso era em período
-                integral.
-              </p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam.</p>
             </div>
             <div class="card-footer">
-              <a href="horario.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -108,12 +137,11 @@
           <div class="card h-100">
             <h4 class="card-header">Matriz Curricular</h4>
             <div class="card-body">
-              <p class="card-text">Os cálculos são constantes ao longo da formação. Entre as disciplinas específicas do curso, 
-                os destaques são: Linguagem de Programação, Bancos de Dados e Inteligência Artificial.
-              </p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="matriz.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -121,12 +149,11 @@
         <div class="card h-100">
           <h4 class="card-header">Ementa</h4>
           <div class="card-body">
-            <p class="card-text"> Promover a formação de cidadãos capazes de responder aos desafios da sociedade em
-                contínua transformação e que atuem como profissionais de sistemas de informação em
-                pesquisa, gestão, desenvolvimento, aplicação e avaliação de tecnologias de informação.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
           </div>
           <div class="card-footer">
-            <a href="ementa.html" class="btn btn-primary">Saiba Mais</a>
+            <a href="sobre.html" class="btn btn-primary" >Editar</a>
+            <button name="button" class="btn btn-secundary">Excluir</button>
           </div>
         </div>
       </div>
@@ -137,7 +164,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="outra.html" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -178,7 +206,7 @@
           <h2>Projetos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="projetos .html">Ver todos os Projetos</a>
+          <a class="float-right" href="projetos .html">Adicionar Projetos</a>
         </div>
       </div>
 
@@ -193,7 +221,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -207,7 +236,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -221,7 +251,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -234,7 +265,7 @@
           <h2>Galeria</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas as Fotos</a>
+          <a class="float-right" href="eventos.html">Adicionar Fotos</a>
         </div>
       </div>
 
@@ -249,7 +280,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -263,7 +295,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -277,7 +310,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -290,7 +324,7 @@
           <h2>Eventos</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas os Eventos</a>
+          <a class="float-right" href="eventos.html">Adicionar Eventos</a>
         </div>
       </div>
 
@@ -305,7 +339,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -319,7 +354,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -333,7 +369,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -347,7 +384,7 @@
           <h2>Notícias</h2>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="float-right" href="eventos.html">Ver todas as notícias</a>
+          <a class="float-right" href="eventos.html">Adicionar Notícias</a>
         </div>
       </div>
 
@@ -362,7 +399,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -376,7 +414,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -390,7 +429,8 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Saiba Mais</a>
+              <a href="#" class="btn btn-primary">Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
             </div>
           </div>
         </div>
@@ -534,53 +574,18 @@
         <!-- Footer Links -->
 
         <div style="background-color: #2a9d38;">
-          <!-- Janela para Login -->
-          <br><br>
-          <form class="form-horizontal" method="POST" action="login.php" enctype="multipart/form-data" data-toggle="validator">
-            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-              aria-hidden="true" style="color:black">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">Fazer Login</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-                      <i class="fas fa-envelope prefix grey-text"></i>
-                      <input type="email" id="email" name = "email" class="form-control validate" placeholder="Seu e-mail">
-                    </div>
-            
-                    <div class="md-form mb-4">
-                      <i class="fas fa-lock prefix grey-text"></i>
-                      <input type="password" id="senha" name = "senha" class="form-control validate" placeholder="Sua senha">
-                    </div>
-            
-                  </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                    <input type="submit" class="btn btn-success" name="login" value="Entrar"></input>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        
-        <div class="text-center">
-          <a href="" class="btn btn-primary btn-rounded " data-toggle="modal" data-target="#modalLoginForm" 
-          >Login para Professores</a>
-        </div>
-          <!-- Fim da Janela do Login -->
+          
           <div class="container">
             <!-- Call to action -->
             <ul class="list-unstyled list-inline text-center py-4">
-              <!--<li class="list-inline-item">
-                <h6 class="mb-1">Login para Professores</h6>
-              </li>
               <li class="list-inline-item">
-                <a href="login/index.html" class="btn btn-secondary btn-rounded">Login</a>
-              </li>-->
+                <style>
+                  button{
+                    background: red;
+                  }
+                </style>
+                <a href="logout.php"><button name="button" class="btn btn-secundary">Sair</button></a>
+              </li>
             </ul>
             <!-- Call to action -->
           </div>

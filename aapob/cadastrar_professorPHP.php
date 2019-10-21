@@ -10,7 +10,7 @@
             '" . $email . "', '" . $senha . "');";
     if ($conn->query($sql) == true) { 
         echo "<script>alert('Professor cadastrado com sucesso!');</script>";
-        echo "<script>window.location.href='admin.php';</script>";
+        echo "<script>window.location.href='exibir_professorHTML.php';</script>";
     }else{
         echo "<script>alert('Erro ao cadastrar professor!');</script>";
         echo "<script>window.location = 'javascript:window.history.go(-1)';</script>";

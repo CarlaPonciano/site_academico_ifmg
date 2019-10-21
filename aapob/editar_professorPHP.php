@@ -8,7 +8,7 @@
     $sql = "UPDATE usuario SET nome = '" . $nome . "', cpf = " . $cpf . ", email = '" . $email . "' WHERE cpf = $cpf";
     if ($conn->query($sql) == true) { 
         echo "<script>alert('Professor atualizado com sucesso!');</script>";
-        echo "<script>window.location.href='admin.php';</script>";
+        echo "<script>window.location.href='exibir_professorHTML.php';</script>";
     }else{
         echo "<script>alert('Erro ao editar professor!');</script>";
         echo "<script>window.location = 'javascript:window.history.go(-1)';</script>";

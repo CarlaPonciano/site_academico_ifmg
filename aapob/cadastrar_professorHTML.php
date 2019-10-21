@@ -41,9 +41,7 @@
             <a class="nav-link dropdown-toggle" href="https://example.com" id="navLink" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerenciar Professores</a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
               <a class="dropdown-item" href="cadastrar_professorHTML.php">Cadastrar</a>
-              <a class="dropdown-item" href="editar_professorHTML.php">Editar</a>
               <a class="dropdown-item" href="exibir_professorHTML.php">Exibir</a>
-              <a class="dropdown-item" href="excluir_professorHTML.php">Excluir</a>
             </div>
           </li>
         </ul>
