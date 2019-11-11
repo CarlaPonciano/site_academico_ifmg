@@ -3,6 +3,7 @@
 
 <?php 
   include ("./conexao.php"); 
+  session_start();
 ?>
 
   <head>
@@ -117,6 +118,25 @@
           <li class="nav-item active">
             <a class="nav-link" href="#" id="navLink">Notícias</a>
           </li>
+          <?php
+              if (isset($_SESSION["email"])) {
+                if($_SESSION['tipo'] == 2){
+          ?>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.php" id="navLink">Área Administrativa</a>
+            </li>
+          <?php   
+              }else{
+                if($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2){
+          ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+                </li>
+          <?php   
+                }
+              }
+           }
+          ?>
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control mr-sm-2" type="Search" placeholder="Pesquisar..." aria-label="Search">

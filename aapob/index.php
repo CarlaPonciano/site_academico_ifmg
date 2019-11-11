@@ -1,5 +1,5 @@
 <?php 
-  include ("include/header.php"); 
+  include ("include/header.php");
 ?>
 
     <!-- Page Content -->
@@ -16,9 +16,24 @@
               <p class="card-text">Uma das principais áreas em que este profissional atua é no desenvolvimento de software.
                  Ele projeta e desenvolve sistemas a partir das necessidades dos usuários.</p>
             </div>
+            <?php
+              if (isset($_SESSION["email"])) {
+                if($_SESSION['tipo'] == 2 || $_SESSION['tipo']==1){
+            ?>
+            <div class="card-footer">
+              <a href="sobre.html" class="btn btn-primary" >Editar</a>
+              <button name="button" class="btn btn-secundary">Excluir</button>
+            </div>
+            <?php
+                }
+              }else{
+                ?>
             <div class="card-footer">
               <a href="sobre.html" class="btn btn-primary">Saiba Mais</a>
             </div>
+            <?php
+            }
+            ?>
           </div>
         </div>
         <div class="col-lg-4 mb-4">
@@ -497,10 +512,28 @@
             </div>
           </form>
         
+          <?php
+              if (isset($_SESSION["email"])) {
+          ?>
         <div class="text-center">
+                <style>
+                  button{
+                    background: red;
+                  }
+                </style>
+                <a href="logout.php"><button name="button" class="btn btn-secundary">Sair</button></a>
+          
+        </div>
+        <?php   
+              }else{
+          ?>
+          <div class="text-center">
           <a href="" class="btn btn-primary btn-rounded " data-toggle="modal" data-target="#modalLoginForm" 
           >Login para Professores</a>
         </div>
+        <?php   
+              }
+          ?>
           <!-- Fim da Janela do Login -->
           <div class="container">
             <!-- Call to action -->
