@@ -103,21 +103,50 @@
           ?>
 
           <!-- fim seções de páginas -->
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink">Corpo Docente</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="navLink">Projetos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="navLink">Galeria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" id="navLink">Eventos</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="navLink">Notícias</a>
-          </li>
+
+            <!-- seções de postagens -->
+
+           <?php
+
+                $sqlPostagens = "SELECT id,titulo FROM secaoposts WHERE exibir = 1;";
+
+                $result = $conn->query($sqlPostagens);
+
+                if ($result->num_rows > 0) { // Exibindo cada linha retornada com a consulta
+                  while ($secaoPosts = $result->fetch_assoc()){
+                    $idSecaoPosts = $secaoPosts["id"];
+                ?>
+
+                    <li class="nav-item">
+                      <a style="font-size: 14px;" class="nav-link disabled" href="postagens.php?id=<?php echo $idSecaoPosts;?>" id="navLink">
+                        <?php 
+
+                        echo $secaoPosts["titulo"];
+
+                        /*if (isset($_SESSION['email'])){
+
+                          if ($_SESSION['tipo'] == 2){
+
+                            $sqlPostsPendentes = "SELECT aprovacao FROM postpendente WHERE aprovacao = 0 AND idSecaoPosts = " . $idSecaoPosts;
+
+                            $resultPendentes = $conn->query($sqlPostsPendentes);
+
+                            if ($resultPendentes->num_rows > 0) { // Exibindo cada linha retornada com a consulta  
+                      ?>
+                              <span class="badge badge-danger">1</span>
+                    /* <?php
+                            }
+                          }
+                        }*/
+                        ?>
+                      </a>
+                    </li>
+                <?php
+                  } // fim while
+                }
+                ?>
+
+                <!-- fim seções de postagens -->
           <?php
               if (isset($_SESSION["email"])) {
                 if($_SESSION['tipo'] == 2){
