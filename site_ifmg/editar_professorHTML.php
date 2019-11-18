@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php 
-  include ("include/headerAdm.php"); 
+  include ("include/header.php"); 
 ?>
 
   <head>
