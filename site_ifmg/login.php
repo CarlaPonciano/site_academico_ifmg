@@ -15,7 +15,7 @@
         $_SESSION['email'] = $exibir["email"];
         $_SESSION['id'] = $exibir["id"];
         $_SESSION['tipo'] = $exibir["tipo"];
-        echo "<script>alert('Login realizado com sucesso!.');</script>";
+        echo "<script>alert('Login realizado com sucesso!');</script>";
         echo "<script>window.location.href='index.php';</script>";
     }else{
         echo "<script>alert('Erro no login. Tente novamente.');</script>";

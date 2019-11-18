@@ -3,7 +3,7 @@
   session_start();
 
   //Caso o usuário não esteja autenticado, limpa os dados e redireciona
-  if (!isset($_SESSION['email']) and ! isset($_SESSION['nome'])) {
+  if (!isset($_SESSION['email'])) {
       
       //Limpa
       unset($_SESSION['nome']);
@@ -13,7 +13,7 @@
 
       
       //Redireciona para a página de autenticação
-      echo"<script language='javascript' type='text/javascript'>alert('Para acessar esta página é preciso fazer login.');window.location.href='index.html';</script>";
+      echo"<script language='javascript' type='text/javascript'>alert('Para acessar esta página é preciso fazer login!');window.location.href='index.php';</script>";
       die();
   }
 ?>

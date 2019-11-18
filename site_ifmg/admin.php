@@ -2,7 +2,8 @@
 <html lang="en">
 
 <?php
-  session_start();
+  include ("include/verificaLogin.php"); 
+  include ("include/verificaAdm.php"); 
 ?>
 
   <head>

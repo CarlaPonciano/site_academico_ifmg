@@ -152,14 +152,17 @@
                 if($_SESSION['tipo'] == 2){
           ?>
             <li class="nav-item">
-              <a class="nav-link" href="admin.php" id="navLink">Área Administrativa</a>
+              <a style="font-size: 14px; background-color: gray; border:2px solid #5c5c3d;" class="nav-link" href="#" id="navLink"><i class="far fa-plus-square"></i>  Cadastrar Seção</a>
+            </li>&nbsp;
+            <li class="nav-item">
+              <a style="font-size: 14px; background-color: gray; border:2px solid #5c5c3d;" class="nav-link" href="admin.php" id="navLink"><i class="fas fa-layer-group"></i>  Área Administrativa</a>
             </li>
           <?php   
               }else{
-                if($_SESSION['tipo'] == 1 || $_SESSION['tipo'] == 2){
+                if($_SESSION['tipo'] == 1){
           ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" id="navLink">Cadastrar Seção</a>
+                <a style="font-size: 14px; background-color: gray; border:2px solid #5c5c3d;" class="nav-link" href="#" id="navLink"><i class="far fa-plus-square"></i>  Cadastrar Seção</a>
                 </li>
           <?php   
                 }
