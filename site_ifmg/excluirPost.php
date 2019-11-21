@@ -4,7 +4,7 @@ include("include/header.php");
 
 if (isset($_SESSION["email"])) { //SE EXISTIR AUTENTICAÇÃO
     if ($_SESSION['tipo'] ==2){ //SE O USUÁRIO LOGADO FOR DO TIPO ADMINISTRADOR
-		echo "oii";
+		
 	if((is_numeric($_GET["idPost"])) && (is_numeric($_GET["idSecao"]))){
 		$idPost = $_GET["idPost"];
 		$idSecao = $_GET["idSecao"];
