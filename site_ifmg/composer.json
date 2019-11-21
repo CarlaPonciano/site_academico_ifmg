@@ -1,0 +1,10 @@
+{
+    "require": {
+        "wenzhixin/bootstrap-table": "dev-master",
+        "twitter/bootstrap": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "mpdf/mpdf": "dev-master",
+        "intelogie/table-export": "dev-master",
+        "components/jquery": "dev-master"
+    }
+}

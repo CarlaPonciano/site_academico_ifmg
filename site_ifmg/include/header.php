@@ -58,7 +58,7 @@
       }
 
     </style>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script><script>new WOW().init();</script>
     <script type="text/javascript">
           new WOW().init();
     </script>
@@ -69,7 +69,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 
-    <a class="navbar-brand" href="index.html"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
+    <a class="navbar-brand" href="index.php"><img class="img-fluid rounded" src="logoSI.png" alt="" style="height: 30px;"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -202,7 +202,7 @@
       <!-- configurações -->
       <?php
         if (isset($_SESSION["email"])) { //SE EXISTIR AUTENTICAÇÃO
-          if (($_SESSION['tipo']) == 2) { //SE O USUÁRIO LOGADO FOR DO TIPO ADMINISTRADOR 
+          if ($_SESSION['tipo'] == 2 || $_SESSION['tipo'] == 1) { //SE O USUÁRIO LOGADO FOR DO TIPO ADMINISTRADOR 
       ?>
 
           <li class="nav-item dropdown">
@@ -230,7 +230,7 @@
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">Seções</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-        <span aria-hidden="true">&times;</span>
+       <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
@@ -384,9 +384,9 @@
     <form class="form-horizontal" action="inserirSecaoPaginas.php" method="post" data-toggle="validator">
 
         <div class="form-group">
-          <label class="control-label col-sm-12" for="titulo">Título:</label>
+          <label class="control-label col-sm-12" for="titulo2">Título:</label>
           <div class="col-sm-12">
-            <input required type="text" class="form-control" id="titulo" name="titulo">
+            <input required type="text" class="form-control" id="titulo2" name="titulo2">
           </div>
         </div>
     </div>

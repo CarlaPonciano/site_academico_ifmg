@@ -3,6 +3,7 @@
   include("include/limitaTexto.php");
 ?>
 
+
     <!-- Page Content -->
     <div class="container">
 
@@ -46,16 +47,6 @@
                           <p style="padding-top: -50px;" class="card-text"><?php echo limitarTexto($conteudoPaginaIndex, $limite=200);?></p>
                         </div>
                         <div class="card-footer">
-                        <?php
-                          if (isset($_SESSION["email"])) {
-                            if($_SESSION['tipo'] == 2 || $_SESSION['tipo']==1){
-                        ?>
-                          <a href="sobre.html" class="btn btn-primary" >Editar</a>
-                          <button name="button" class="btn btn-secundary">Excluir</button>
-                        <?php
-                            }
-                          }
-                        ?>
                           <a href="pagina.php?id=<?php echo $idPaginaIndex; ?>" class="btn btn-primary">Saiba Mais</a>
                         </div>
                       </div>
@@ -130,16 +121,6 @@
                         <p class="card-text"><?php echo limitarTexto($conteudo, $limite=270); ?></p>
                       </div>
                       <div class="card-footer">
-                      <?php
-                        if (isset($_SESSION["email"])) {
-                          if($_SESSION['tipo'] == 2 || $_SESSION['tipo']==1){
-                      ?>
-                        <a href="sobre.html" class="btn btn-primary" >Editar</a>
-                        <button name="button" class="btn btn-secundary">Excluir</button>
-                      <?php
-                          }
-                        }
-                      ?>
                         <a href="post.php?id=<?php echo $idPost; ?>" class="btn btn-primary">Saiba Mais</a>
                       </div>
                     </div>

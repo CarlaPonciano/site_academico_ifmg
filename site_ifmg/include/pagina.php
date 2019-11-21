@@ -3,10 +3,10 @@
 
   $id = $_GET["id"];
 
-  $sqlPagina = "SELECT nome, conteudo, data_alteracao, nome as autor, autorAprovacao, dataAprovacao 
-                FROM pagina JOIN usuario ON usuario.id = id_autor WHERE idPagina = " . $id;
+  $sqlPagina = "SELECT nome, conteudo, data_alteracao, usuario.nome as usuario, id_autor_aprovacao, data_aprovacao 
+                FROM pagina JOIN usuario ON usuario.id = id_autor WHERE id = " . $id;
 
-  $resultPagina = $con->query($sqlPagina);
+  $resultPagina = $conn->query($sqlPagina);
 
   if ($resultPagina->num_rows > 0) { // Exibindo cada linha retornada com a consulta
     while ($exibirPagina = $resultPagina->fetch_assoc()){
@@ -14,25 +14,25 @@
       $conteudo = $exibirPagina["conteudo"];
       $autor = ucwords($exibirPagina["usuario"]);
 
-      $datetimeAlt = $exibirPagina["dataAlteracao"];
+      $datetimeAlt = $exibirPagina["data_alteracao"];
       $datetime = new DateTime($datetimeAlt);
       $datetime = $datetime->format('d/m/Y H:i:s');
       $dataAlteracao = substr($datetime, 0, 10); 
       $horaAlteracao = substr($datetime, 11, 2) . "h" . substr($datetime, 14, 2) . "min";
 
-      $datetimeAlt = $exibirPagina["dataAprovacao"];
+      $datetimeAlt = $exibirPagina["data_aprovacao"];
       $datetime = new DateTime($datetimeAlt);
       $datetime = $datetime->format('d/m/Y H:i:s');
       $dataAprovacao = substr($datetime, 0, 10); 
       $horaAprovacao = substr($datetime, 11, 2) . "h" . substr($datetime, 14, 2) . "min";
 
-      $sqlAutorAprovacao = "SELECT usuario FROM pagina JOIN perfil ON autorAprovacao = idPerfil WHERE idPagina = " . $id;
+      $sqlAutorAprovacao = "SELECT nome FROM pagina JOIN tipo_perfil ON id_autor_aprovacao = id WHERE idPagina = " . $id;
 
-      $resultAutorAprovacao = $con->query($sqlAutorAprovacao);
+      $resultAutorAprovacao = $conn->query($sqlAutorAprovacao);
 
       if ($resultAutorAprovacao->num_rows > 0) { // Exibindo cada linha retornada com a consulta
         while ($exibirAutorAprovacao = $resultAutorAprovacao->fetch_assoc()){
-          $autorAprovacao = ucwords($exibirAutorAprovacao["usuario"]);
+          $autorAprovacao = ucwords($exibirAutorAprovacao["nome"]);
         }
       }
 
@@ -49,9 +49,9 @@
 
           <?php
 
-          if (isset($_SESSION['login'])){
+          if (isset($_SESSION['email'])){
 
-            if (($_SESSION['tipo'] != 'socio') && ($_SESSION['tipo'] != 'dependente')) { 
+            if ($_SESSION['tipo'] != 2) { 
 
           ?>
             <small><i>Última alteração realizada por <?php echo $autor; ?> em <?php echo $dataAlteracao; ?> às <?php echo $horaAlteracao; ?></i></small>
@@ -69,14 +69,14 @@
 
         <?php
 
-          if (isset($_SESSION['login'])){
+          if (isset($_SESSION['email'])){
 
-            if (($_SESSION['tipo'] != 'socio') && ($_SESSION['tipo'] != 'dependente')) { 
+            if ($_SESSION['tipo'] != 2) { 
 
           ?>
             <div class="float-right col-md-4">
           <?php
-              if (isAdmin($_SESSION['tipo'])){
+              if (($_SESSION['tipo']) == 2){
           ?>
                 <a class="btn btn-primary btn-block" href="editarPaginaAdmin.php?id=<?php echo $id; ?>"><i class="far fa-edit"></i> Editar</a>
           <?php     
@@ -99,13 +99,13 @@
 
       <?php
 
-        if (isset($_SESSION['login'])){
+        if (isset($_SESSION['email'])){
 
-          if (isAdmin($_SESSION['tipo'])){
+          if (($_SESSION['tipo'])==2){
 
-            $sqlPaginaPendente = "SELECT aprovacao FROM paginapendente WHERE idPaginaPendente = " . $id;
+            $sqlPaginaPendente = "SELECT aprovacao FROM pagina_pendente WHERE id = " . $id;
 
-            $resultPaginaPendente = $con->query($sqlPaginaPendente);
+            $resultPaginaPendente = $conn->query($sqlPaginaPendente);
 
             if ($resultPaginaPendente->num_rows > 0) { // Exibindo cada linha retornada com a consulta
               while ($exibirPaginaPendente = $resultPaginaPendente->fetch_assoc()){
